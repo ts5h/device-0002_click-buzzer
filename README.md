@@ -1,1 +1,1 @@
-Device-0002 Click Buzzer
+Device-0002 Click Buzzer - 2021
