@@ -51,6 +51,8 @@
 #include <xc.h>
 #include "tmr2.h"
 
+#include "pin_manager.h"
+
 /**
   Section: Global Variables Definitions
 */
@@ -82,6 +84,9 @@ void TMR2_Initialize(void)
 
     // T2CKPS 1:64; T2OUTPS 1:1; TMR2ON on; 
     T2CON = 0x07;
+    
+    // LED
+    LED_OUT_SetLow();
 }
 
 void TMR2_StartTimer(void)
@@ -141,9 +146,24 @@ void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR2_InterruptHandler = InterruptHandler;
 }
 
+
+unsigned int cnt = 0;
+
 void TMR2_DefaultInterruptHandler(void){
     // add your TMR2 interrupt custom code
     // or set custom function using TMR2_SetInterruptHandler()
+    
+    // LED on every 500ms
+    if (cnt < 2) { // 8ms
+        LED_OUT_SetHigh();
+    } else {
+        LED_OUT_SetLow();
+    }
+    
+    cnt++;
+    if (cnt >= 125) {
+        cnt = 0;
+    }
 }
 
 /**

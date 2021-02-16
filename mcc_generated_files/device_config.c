@@ -47,7 +47,7 @@
 // Configuration bits: selected in the GUI
 
 // CONFIG1
-#pragma config FOSC = EXTRC    // Oscillator Selection Bits->EXTRC oscillator: External RC circuit connected to CLKIN pin
+#pragma config FOSC = HS    // Oscillator Selection Bits->HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins
 #pragma config WDTE = OFF    // Watchdog Timer Enable->WDT disabled
 #pragma config PWRTE = OFF    // Power-up Timer Enable->PWRT disabled
 #pragma config MCLRE = ON    // MCLR Pin Function Select->MCLR/VPP pin function is MCLR

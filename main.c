@@ -90,7 +90,7 @@ void main(void)
     unsigned char isClick = 0;
     unsigned int dur = 0;
     unsigned int delay = 0;
-    unsigned int dutyValue = 0;    
+    unsigned int dutyValue = 0;
 
     // BPM 120
     while (1)
