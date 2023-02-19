@@ -4,3 +4,7 @@ A PIC16F1705 based loud buzzer.
 
 ## Schematic
 ![Schematic](./schematic/schematic.png)
+
+## LICENSE
+[MIT License](./LICENSE)
+
